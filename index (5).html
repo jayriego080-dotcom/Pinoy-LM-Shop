@@ -1,0 +1,730 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#091426">
+
+    <title>PINOY LM SHOP | Digital Gaming Store</title>
+
+    <meta name="description" content="PINOY LM SHOP - Your digital gaming store for RSS, Bots, Gems and more.">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- =========================
+     WEBSITE HEADER
+========================= -->
+
+<header class="main-header">
+
+    <div class="header-container">
+
+        <a href="index.html" class="brand">
+            <span class="brand-logo">P</span>
+
+            <span class="brand-text">
+                <strong>PINOY LM SHOP</strong>
+                <small>DIGITAL GAMING STORE 🇵🇭</small>
+            </span>
+        </a>
+
+        <nav class="desktop-nav">
+            <a href="#home">Home</a>
+            <a href="#categories">Categories</a>
+            <a href="#products">Products</a>
+            <a href="#support">Support</a>
+        </nav>
+
+        <div class="header-actions">
+
+            <button class="icon-button" id="cart-button"
+                aria-label="Shopping cart">
+                <span>🛒</span>
+                <span class="cart-count" id="cart-count">0</span>
+            </button>
+
+            <button class="login-button" id="login-button">
+                Login
+            </button>
+
+            <button class="mobile-menu-button"
+                id="mobile-menu-button"
+                aria-label="Open navigation">
+                ☰
+            </button>
+
+        </div>
+
+    </div>
+
+    <nav class="mobile-nav" id="mobile-nav">
+        <a href="#home">Home</a>
+        <a href="#categories">Categories</a>
+        <a href="#products">Products</a>
+        <a href="#support">Support</a>
+        <a href="admin.html">Admin Login</a>
+    </nav>
+
+</header>
+
+
+<!-- =========================
+     MAIN CONTENT
+========================= -->
+
+<main>
+
+    <!-- HERO SECTION -->
+
+    <section class="hero-section" id="home">
+
+        <div class="hero-content">
+
+            <span class="hero-label">
+                🇵🇭 WELCOME TO PINOY LM SHOP
+            </span>
+
+            <h1>
+                YOUR DIGITAL
+                <span>GAMING MARKETPLACE</span>
+            </h1>
+
+            <p>
+                Your destination for RSS resources,
+                automation bots, tracker tools,
+                gems and other digital products.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#categories" class="primary-button">
+                    Explore Products →
+                </a>
+
+                <a href="#support" class="secondary-button">
+                    Contact Support
+                </a>
+
+            </div>
+
+            <div class="hero-features">
+                <span>✓ Digital Products</span>
+                <span>✓ Customer Dashboard</span>
+                <span>✓ Customer Support</span>
+            </div>
+
+        </div>
+
+        <div class="hero-art">
+
+            <div class="hero-glow"></div>
+
+            <div class="hero-emblem">
+                <span>⚡</span>
+                <strong>PLM</strong>
+                <small>POWER YOUR GAME</small>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- TRUST INFORMATION -->
+
+    <section class="trust-section">
+
+        <div class="trust-item">
+            <span>🛡️</span>
+            <div>
+                <strong>Secure Shopping</strong>
+                <small>Protected customer accounts</small>
+            </div>
+        </div>
+
+        <div class="trust-item">
+            <span>⚡</span>
+            <div>
+                <strong>Digital Delivery</strong>
+                <small>For supported products</small>
+            </div>
+        </div>
+
+        <div class="trust-item">
+            <span>💬</span>
+            <div>
+                <strong>Customer Support</strong>
+                <small>Assistance when needed</small>
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- CATEGORY SECTION -->
+
+    <section class="section-container" id="categories">
+
+        <div class="section-heading">
+
+            <div>
+                <span class="section-label">EXPLORE OUR STORE</span>
+                <h2>Shop Categories</h2>
+                <p>Find the products you need.</p>
+            </div>
+
+        </div>
+
+
+        <div class="category-grid">
+
+            <!-- RSS -->
+
+            <button class="category-card rss-card"
+                data-category="RSS">
+
+                <div class="category-art rss-art">
+                    <span>🏰</span>
+                    <span>🌾 🪵 🪨 🪙</span>
+                </div>
+
+                <div class="category-info">
+                    <h3>RSS MARKET</h3>
+                    <p>Food, Wood, Stone, Ore & Gold</p>
+                    <span class="category-link">
+                        Browse RSS →
+                    </span>
+                </div>
+
+            </button>
+
+
+            <!-- BOT -->
+
+            <button class="category-card bot-card"
+                data-category="Bot">
+
+                <div class="category-art bot-art">
+                    <span>🤖</span>
+                    <small>BOT AUTOMATION</small>
+                </div>
+
+                <div class="category-info">
+                    <h3>BOT SHOP</h3>
+                    <p>Farm Bot & New Bot subscriptions</p>
+                    <span class="category-link">
+                        Browse Bots →
+                    </span>
+                </div>
+
+            </button>
+
+
+            <!-- TRACKER -->
+
+            <button class="category-card tracker-card"
+                data-category="Tracker">
+
+                <div class="category-art tracker-art">
+                    <span>👾</span>
+                    <small>TRACKER SYSTEM</small>
+                </div>
+
+                <div class="category-info">
+                    <h3>TRACKER BOT</h3>
+                    <p>Tracking tools and subscriptions</p>
+                    <span class="category-link">
+                        Explore Tracker →
+                    </span>
+                </div>
+
+            </button>
+
+
+            <!-- GEMS -->
+
+            <button class="category-card gems-card"
+                data-category="Gems">
+
+                <div class="category-art gems-art">
+                    <span>💎</span>
+                    <small>GEMS & ITEMS</small>
+                </div>
+
+                <div class="category-info">
+                    <h3>GEMS & ITEMS</h3>
+                    <p>Game gems and valuable items</p>
+                    <span class="category-link">
+                        Browse Items →
+                    </span>
+                </div>
+
+            </button>
+
+
+            <!-- OTHER PRODUCTS -->
+
+            <button class="category-card other-card"
+                data-category="Other">
+
+                <div class="category-art other-art">
+                    <span>🎁</span>
+                    <small>SPECIAL OFFERS</small>
+                </div>
+
+                <div class="category-info">
+                    <h3>OTHER PRODUCTS</h3>
+                    <p>Additional digital products</p>
+                    <span class="category-link">
+                        Discover More →
+                    </span>
+                </div>
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- PRODUCT SECTION -->
+
+    <section class="section-container" id="products">
+
+        <div class="section-heading">
+
+            <div>
+                <span class="section-label">OUR COLLECTION</span>
+                <h2>Featured Products</h2>
+                <p>Discover available products from our shop.</p>
+            </div>
+
+            <a href="#products" class="view-all">
+                View All →
+            </a>
+
+        </div>
+
+
+        <!-- PRODUCT FILTERS -->
+
+        <div class="product-filters" id="product-filters">
+
+            <button class="filter-button active"
+                data-filter="All">
+                All
+            </button>
+
+            <button class="filter-button"
+                data-filter="RSS">
+                RSS
+            </button>
+
+            <button class="filter-button"
+                data-filter="Bot">
+                Bots
+            </button>
+
+            <button class="filter-button"
+                data-filter="Tracker">
+                Tracker
+            </button>
+
+            <button class="filter-button"
+                data-filter="Gems">
+                Gems
+            </button>
+
+            <button class="filter-button"
+                data-filter="Other">
+                Other
+            </button>
+
+        </div>
+
+
+        <!-- SEARCH -->
+
+        <div class="product-search">
+
+            <span>🔎</span>
+
+            <input
+                type="search"
+                id="product-search"
+                placeholder="Search products..."
+                autocomplete="off">
+
+        </div>
+
+
+        <!-- PRODUCTS WILL LOAD HERE -->
+
+        <div class="product-grid" id="product-grid">
+
+            <div class="loading-message">
+                Loading products...
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- GEMS CALCULATOR -->
+
+    <section class="section-container calculator-section">
+
+        <div class="calculator-content">
+
+            <span class="section-label">GAMING TOOLS</span>
+
+            <h2>Gems & Items Calculator</h2>
+
+            <p>
+                Calculate the estimated value of your
+                gems and gaming items.
+            </p>
+
+            <button class="primary-button"
+                id="open-calculator">
+                Open Calculator →
+            </button>
+
+        </div>
+
+        <div class="calculator-art">
+            <span>💎</span>
+            <span>✨</span>
+        </div>
+
+    </section>
+
+
+    <!-- CUSTOMER BENEFITS -->
+
+    <section class="section-container benefits-section">
+
+        <div class="section-heading">
+            <div>
+                <span class="section-label">CUSTOMER EXPERIENCE</span>
+                <h2>Your Account, Your Control</h2>
+            </div>
+        </div>
+
+        <div class="benefits-grid">
+
+            <div class="benefit-card">
+                <span>👤</span>
+                <h3>Customer Dashboard</h3>
+                <p>Manage your account and profile.</p>
+            </div>
+
+            <div class="benefit-card">
+                <span>💰</span>
+                <h3>Digital Wallet</h3>
+                <p>Manage balance and top-up requests.</p>
+            </div>
+
+            <div class="benefit-card">
+                <span>📦</span>
+                <h3>Order History</h3>
+                <p>Review your purchases and deliveries.</p>
+            </div>
+
+            <div class="benefit-card">
+                <span>🔄</span>
+                <h3>Subscriptions</h3>
+                <p>Manage eligible bot renewals and slots.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SUPPORT -->
+
+    <section class="section-container support-section"
+        id="support">
+
+        <div>
+            <span class="section-label">NEED ASSISTANCE?</span>
+            <h2>We're Here to Help</h2>
+            <p>
+                Contact PINOY LM SHOP for orders,
+                payments and product assistance.
+            </p>
+        </div>
+
+        <div class="support-buttons">
+
+            <a href="#" id="whatsapp-link"
+                class="secondary-button">
+                WhatsApp Support
+            </a>
+
+            <a href="#" id="telegram-link"
+                class="secondary-button">
+                Telegram Support
+            </a>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer class="main-footer">
+
+    <div class="footer-content">
+
+        <div class="footer-brand">
+            <strong>PINOY LM SHOP 🇵🇭</strong>
+            <p>Your Digital Gaming Store.</p>
+        </div>
+
+        <div class="footer-links">
+            <a href="#home">Home</a>
+            <a href="#categories">Categories</a>
+            <a href="#support">Support</a>
+            <a href="admin.html">Admin Login</a>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        © <span id="current-year"></span>
+        PINOY LM SHOP. All Rights Reserved.
+    </div>
+
+</footer>
+
+
+<!-- =========================
+     CART DRAWER
+========================= -->
+
+<div class="modal-overlay" id="cart-modal">
+
+    <div class="modal-box">
+
+        <div class="modal-header">
+
+            <h2>Your Shopping Cart</h2>
+
+            <button class="close-modal"
+                data-close="cart-modal">
+                ✕
+            </button>
+
+        </div>
+
+        <div id="cart-items">
+            <p>Your cart is empty.</p>
+        </div>
+
+        <div class="cart-total">
+            <span>Total</span>
+            <strong id="cart-total">₱0.00</strong>
+        </div>
+
+        <button class="primary-button full-button"
+            id="checkout-button">
+            Proceed to Checkout
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     LOGIN MODAL
+========================= -->
+
+<div class="modal-overlay" id="login-modal">
+
+    <div class="modal-box">
+
+        <div class="modal-header">
+
+            <h2>Customer Login</h2>
+
+            <button class="close-modal"
+                data-close="login-modal">
+                ✕
+            </button>
+
+        </div>
+
+        <form id="login-form">
+
+            <label>Email Address</label>
+
+            <input
+                type="email"
+                id="login-email"
+                placeholder="Enter your email"
+                required>
+
+            <label>Password</label>
+
+            <input
+                type="password"
+                id="login-password"
+                placeholder="Enter your password"
+                required>
+
+            <button type="submit"
+                class="primary-button full-button">
+                Login
+            </button>
+
+        </form>
+
+        <p class="modal-switch">
+            Don't have an account?
+            <button id="show-register">
+                Register
+            </button>
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     REGISTER MODAL
+========================= -->
+
+<div class="modal-overlay" id="register-modal">
+
+    <div class="modal-box">
+
+        <div class="modal-header">
+
+            <h2>Create Account</h2>
+
+            <button class="close-modal"
+                data-close="register-modal">
+                ✕
+            </button>
+
+        </div>
+
+        <form id="register-form">
+
+            <label>Full Name</label>
+
+            <input
+                type="text"
+                id="register-name"
+                placeholder="Enter your name"
+                required>
+
+            <label>Email Address</label>
+
+            <input
+                type="email"
+                id="register-email"
+                placeholder="Enter your email"
+                required>
+
+            <label>Password</label>
+
+            <input
+                type="password"
+                id="register-password"
+                placeholder="Create password"
+                minlength="8"
+                required>
+
+            <button type="submit"
+                class="primary-button full-button">
+                Create Account
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     GEMS CALCULATOR MODAL
+========================= -->
+
+<div class="modal-overlay" id="calculator-modal">
+
+    <div class="modal-box">
+
+        <div class="modal-header">
+
+            <h2>💎 Gems Calculator</h2>
+
+            <button class="close-modal"
+                data-close="calculator-modal">
+                ✕
+            </button>
+
+        </div>
+
+        <label>Gem Quantity</label>
+
+        <input
+            type="number"
+            id="gem-quantity"
+            min="0"
+            placeholder="Enter gem quantity">
+
+        <label>Value per Gem</label>
+
+        <input
+            type="number"
+            id="gem-value"
+            min="0"
+            step="0.01"
+            placeholder="Enter conversion value">
+
+        <button class="primary-button full-button"
+            id="calculate-gems">
+            Calculate Value
+        </button>
+
+        <div class="calculator-result"
+            id="calculator-result">
+            Estimated value will appear here.
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     NOTIFICATION
+========================= -->
+
+<div class="toast-container" id="toast-container"></div>
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script src="script.js"></script>
+
+</body>
+</html>

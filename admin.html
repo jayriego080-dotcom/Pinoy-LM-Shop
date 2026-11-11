@@ -1,0 +1,1079 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b1220">
+
+  <title>PINoy LM Shop | Admin Panel</title>
+
+  <link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+
+  <div class="admin-layout">
+
+    <!-- SIDEBAR -->
+
+    <aside class="admin-sidebar" id="admin-sidebar">
+
+      <div class="admin-brand">
+        <div class="brand-icon">🇵🇭</div>
+
+        <div>
+          <h2>PINoy LM</h2>
+          <span>SHOP ADMIN</span>
+        </div>
+      </div>
+
+      <div class="admin-profile">
+        <div class="admin-avatar">A</div>
+
+        <div>
+          <strong>Administrator</strong>
+          <small>Shop Management</small>
+        </div>
+      </div>
+
+      <nav class="admin-navigation">
+
+        <p class="nav-heading">MAIN MENU</p>
+
+        <a href="#dashboard" class="admin-nav active" data-page="dashboard">
+          <span>📊</span> Dashboard
+        </a>
+
+        <a href="#products" class="admin-nav" data-page="products">
+          <span>📦</span> Products
+        </a>
+
+        <a href="#categories" class="admin-nav" data-page="categories">
+          <span>🗂️</span> Categories
+        </a>
+
+        <a href="#orders" class="admin-nav" data-page="orders">
+          <span>🛒</span> Orders
+        </a>
+
+        <a href="#customers" class="admin-nav" data-page="customers">
+          <span>👥</span> Customers
+        </a>
+
+        <p class="nav-heading">FINANCIAL</p>
+
+        <a href="#wallet" class="admin-nav" data-page="wallet">
+          <span>💰</span> Wallet Requests
+        </a>
+
+        <a href="#transactions" class="admin-nav" data-page="transactions">
+          <span>🧾</span> Transactions
+        </a>
+
+        <a href="#reports" class="admin-nav" data-page="reports">
+          <span>📈</span> Sales Reports
+        </a>
+
+        <p class="nav-heading">MANAGEMENT</p>
+
+        <a href="#inventory" class="admin-nav" data-page="inventory">
+          <span>🏷️</span> RSS Inventory
+        </a>
+
+        <a href="#subscriptions" class="admin-nav" data-page="subscriptions">
+          <span>🤖</span> Subscriptions
+        </a>
+
+        <a href="#suppliers" class="admin-nav" data-page="suppliers">
+          <span>🚚</span> Suppliers / API
+        </a>
+
+        <a href="#settings" class="admin-nav" data-page="settings">
+          <span>⚙️</span> Settings
+        </a>
+
+      </nav>
+
+      <div class="sidebar-footer">
+        <a href="index.html">← Customer Website</a>
+        <button type="button" id="admin-logout">Logout</button>
+      </div>
+
+    </aside>
+
+    <!-- MAIN CONTENT -->
+
+    <main class="admin-main">
+
+      <header class="admin-topbar">
+
+        <button id="sidebar-toggle" class="sidebar-toggle">
+          ☰
+        </button>
+
+        <div class="topbar-title">
+          <h1 id="page-title">Dashboard</h1>
+          <p>Welcome to PINoy LM Shop Management</p>
+        </div>
+
+        <div class="topbar-actions">
+          <button type="button" id="admin-notifications">
+            🔔
+          </button>
+
+          <div class="topbar-user">
+            <span>Administrator</span>
+            <div class="admin-avatar">A</div>
+          </div>
+        </div>
+
+      </header>
+
+      <!-- DASHBOARD PAGE -->
+
+      <section class="admin-page active" id="page-dashboard">
+
+        <div class="page-heading">
+          <div>
+            <h2>Shop Overview</h2>
+            <p>Monitor your shop performance.</p>
+          </div>
+
+          <span class="live-indicator">● pinoy LM shop</span>
+        </div>
+
+        <!-- STATISTICS -->
+
+        <div class="stats-grid">
+
+          <div class="stat-card">
+            <div class="stat-icon blue">💰</div>
+            <div>
+              <span>Total Sales</span>
+              <h3 id="stat-sales">₱0.00</h3>
+              <small>All recorded sales</small>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon green">🛒</div>
+            <div>
+              <span>Total Orders</span>
+              <h3 id="stat-orders">0</h3>
+              <small>Customer purchases</small>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon purple">👥</div>
+            <div>
+              <span>Customers</span>
+              <h3 id="stat-customers">0</h3>
+              <small>Registered accounts</small>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon orange">📦</div>
+            <div>
+              <span>Products</span>
+              <h3 id="stat-products">0</h3>
+              <small>Available listings</small>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- SECONDARY STATISTICS -->
+
+        <div class="stats-grid secondary-stats">
+
+          <div class="stat-card">
+            <div class="stat-icon green">📈</div>
+            <div>
+              <span>Estimated Profit</span>
+              <h3 id="stat-profit">₱0.00</h3>
+              <small>Sales minus supplier costs</small>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon orange">⏳</div>
+            <div>
+              <span>Pending Orders</span>
+              <h3 id="stat-pending">0</h3>
+              <small>Awaiting processing</small>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- RECENT ACTIVITY -->
+
+        <div class="dashboard-grid">
+
+          <div class="admin-card">
+            <div class="card-heading">
+              <h3>Recent Orders</h3>
+              <a href="#orders" data-page-link="orders">View All</a>
+            </div>
+
+            <div id="dashboard-recent-orders">
+              <p class="empty-message">No orders recorded yet.</p>
+            </div>
+          </div>
+
+          <div class="admin-card">
+            <div class="card-heading">
+              <h3>Quick Actions</h3>
+            </div>
+
+            <div class="quick-actions">
+
+              <button type="button" data-open-page="products">
+                <span>➕</span>
+                Add Product
+              </button>
+
+              <button type="button" data-open-page="inventory">
+                <span>📥</span>
+                Import RSS
+              </button>
+
+              <button type="button" data-open-page="wallet">
+                <span>💳</span>
+                Wallet Requests
+              </button>
+
+              <button type="button" data-open-page="customers">
+                <span>👤</span>
+                Manage Customers
+              </button>
+
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- PRODUCTS PAGE -->
+
+      <section class="admin-page" id="page-products">
+
+        <div class="page-heading">
+          <div>
+            <h2>Product Management</h2>
+            <p>Add, edit, manage prices and product availability.</p>
+          </div>
+
+          <button class="primary-button" id="add-product-button">
+            + Add Product
+          </button>
+        </div>
+
+        <div class="admin-card">
+
+          <div class="table-toolbar">
+            <input type="search" id="product-search" placeholder="Search products...">
+
+            <select id="product-category-filter">
+              <option value="All">All Categories</option>
+              <option value="RSS">RSS</option>
+              <option value="Bot">Bot</option>
+              <option value="Tracker">Tracker</option>
+              <option value="Gems">Gems</option>
+              <option value="Other">Other Products</option>
+            </select>
+          </div>
+
+          <div class="table-responsive">
+            <table>
+              <thead>
+                <tr>
+                  <th>Product</th>
+                  <th>Category</th>
+                  <th>Supplier Cost</th>
+                  <th>Sale Price</th>
+                  <th>Stock</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+
+              <tbody id="admin-products-table">
+                <tr>
+                  <td colspan="7">No products loaded.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- CATEGORIES PAGE -->
+
+      <section class="admin-page" id="page-categories">
+
+        <div class="page-heading">
+          <div>
+            <h2>Categories</h2>
+            <p>Manage your shop product categories.</p>
+          </div>
+
+          <button class="primary-button" id="add-category-button">
+            + Add Category
+          </button>
+        </div>
+
+        <div class="category-admin-grid" id="admin-category-list">
+
+          <div class="admin-card">
+            <span>📦</span>
+            <h3>RSS</h3>
+            <p>Old KD, Rarely KD and Fresh KD RSS</p>
+          </div>
+
+          <div class="admin-card">
+            <span>🤖</span>
+            <h3>Bot</h3>
+            <p>Farm Bot and New Bot</p>
+          </div>
+
+          <div class="admin-card">
+            <span>🛰️</span>
+            <h3>Tracker</h3>
+            <p>Tracker products</p>
+          </div>
+
+          <div class="admin-card">
+            <span>💎</span>
+            <h3>Gems</h3>
+            <p>Gems packages</p>
+          </div>
+
+          <div class="admin-card">
+            <span>🎁</span>
+            <h3>Other Products</h3>
+            <p>Additional shop products</p>
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- ORDERS PAGE -->
+
+      <section class="admin-page" id="page-orders">
+
+        <div class="page-heading">
+          <div>
+            <h2>Order Management</h2>
+            <p>Review customer orders and delivery status.</p>
+          </div>
+        </div>
+
+        <div class="admin-card">
+
+          <div class="table-toolbar">
+            <input type="search" id="order-search" placeholder="Search order or customer...">
+
+            <select id="order-status-filter">
+              <option value="All">All Status</option>
+              <option value="Pending">Pending</option>
+              <option value="Paid">Paid</option>
+              <option value="Processing">Processing</option>
+              <option value="Completed">Completed</option>
+              <option value="Cancelled">Cancelled</option>
+            </select>
+          </div>
+
+          <div class="table-responsive">
+            <table>
+              <thead>
+                <tr>
+                  <th>Order ID</th>
+                  <th>Customer</th>
+                  <th>Items</th>
+                  <th>Total</th>
+                  <th>Date</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+
+              <tbody id="admin-orders-table">
+                <tr>
+                  <td colspan="7">No orders loaded.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- CUSTOMERS PAGE -->
+
+      <section class="admin-page" id="page-customers">
+
+        <div class="page-heading">
+          <div>
+            <h2>Customer Management</h2>
+            <p>View registered members and manage customer accounts.</p>
+          </div>
+        </div>
+
+        <div class="admin-card">
+
+          <div class="table-toolbar">
+            <input type="search" id="customer-search" placeholder="Search customer name or email...">
+
+            <select id="customer-status-filter">
+              <option value="All">All Customers</option>
+              <option value="Active">Active</option>
+              <option value="Suspended">Suspended</option>
+            </select>
+          </div>
+
+          <div class="table-responsive">
+            <table>
+              <thead>
+                <tr>
+                  <th>Customer ID</th>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Wallet</th>
+                  <th>Orders</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+
+              <tbody id="admin-customers-table">
+                <tr>
+                  <td colspan="7">No customers loaded.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+
+        <!-- CUSTOMER DETAILS -->
+
+        <div class="admin-card customer-details-card" id="customer-details">
+
+          <div class="card-heading">
+            <h3>Customer Profile</h3>
+
+            <button type="button" id="close-customer-details">
+              ✕
+            </button>
+          </div>
+
+          <div id="customer-profile-content">
+            <p class="empty-message">
+              Select a customer to view their profile.
+            </p>
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- WALLET REQUESTS PAGE -->
+
+      <section class="admin-page" id="page-wallet">
+
+        <div class="page-heading">
+          <div>
+            <h2>Wallet Requests</h2>
+            <p>Review top-ups and verify payment proof.</p>
+          </div>
+        </div>
+
+        <div class="admin-card">
+
+          <div class="table-responsive">
+            <table>
+              <thead>
+                <tr>
+                  <th>Request ID</th>
+                  <th>Customer</th>
+                  <th>Amount</th>
+                  <th>Sender Name</th>
+                  <th>Reference</th>
+                  <th>Proof</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+
+              <tbody id="admin-wallet-table">
+                <tr>
+                  <td colspan="8">No wallet requests loaded.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- TRANSACTIONS PAGE -->
+
+      <section class="admin-page" id="page-transactions">
+
+        <div class="page-heading">
+          <div>
+            <h2>Transactions</h2>
+            <p>Review wallet activities and shop payments.</p>
+          </div>
+        </div>
+
+        <div class="admin-card">
+
+          <div class="table-toolbar">
+            <input type="search" id="transaction-search" placeholder="Search transaction...">
+
+            <select id="transaction-type-filter">
+              <option value="All">All Transactions</option>
+              <option value="Top-up">Top-up</option>
+              <option value="Purchase">Purchase</option>
+              <option value="Refund">Refund</option>
+            </select>
+          </div>
+
+          <div class="table-responsive">
+            <table>
+              <thead>
+                <tr>
+                  <th>Transaction ID</th>
+                  <th>Customer</th>
+                  <th>Type</th>
+                  <th>Amount</th>
+                  <th>Reference</th>
+                  <th>Date</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+
+              <tbody id="admin-transactions-table">
+                <tr>
+                  <td colspan="7">No transactions loaded.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- SALES REPORTS PAGE -->
+
+      <section class="admin-page" id="page-reports">
+
+        <div class="page-heading">
+          <div>
+            <h2>Sales & Profit Reports</h2>
+            <p>Monitor revenue, supplier expenses and net profit.</p>
+          </div>
+        </div>
+
+        <div class="stats-grid">
+
+          <div class="stat-card">
+            <div class="stat-icon blue">💵</div>
+            <div>
+              <span>Total Revenue</span>
+              <h3 id="report-revenue">₱0.00</h3>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon orange">🚚</div>
+            <div>
+              <span>Supplier Expenses</span>
+              <h3 id="report-expenses">₱0.00</h3>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon green">📈</div>
+            <div>
+              <span>Net Profit</span>
+              <h3 id="report-profit">₱0.00</h3>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="admin-card">
+          <h3>Profit Calculation</h3>
+          <p>
+            Revenue − Supplier Cost − Recorded Expenses = Net Profit
+          </p>
+
+          <div id="profit-report-details">
+            <p class="empty-message">
+              Report data will appear after database integration.
+            </p>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- RSS INVENTORY PAGE -->
+
+      <section class="admin-page" id="page-inventory">
+
+        <div class="page-heading">
+          <div>
+            <h2>RSS Inventory</h2>
+            <p>Import, organize and manage your RSS codes.</p>
+          </div>
+
+          <button class="primary-button" id="import-rss-button">
+            + Import RSS
+          </button>
+        </div>
+
+        <div class="stats-grid">
+
+          <div class="stat-card">
+            <div class="stat-icon blue">📦</div>
+            <div>
+              <span>Total Codes</span>
+              <h3 id="rss-total">0</h3>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon green">✅</div>
+            <div>
+              <span>Available</span>
+              <h3 id="rss-available">0</h3>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon orange">🛒</div>
+            <div>
+              <span>Sold</span>
+              <h3 id="rss-sold">0</h3>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="admin-card">
+
+          <div class="table-toolbar">
+            <input type="search" id="rss-search" placeholder="Search RSS code...">
+
+            <select id="rss-category-filter">
+              <option value="All">All RSS Categories</option>
+              <option value="Old KD RSS">Old KD RSS</option>
+              <option value="Rarely KD RSS">Rarely KD RSS</option>
+              <option value="Fresh KD RSS">Fresh KD RSS</option>
+            </select>
+          </div>
+
+          <div class="table-responsive">
+            <table>
+              <thead>
+                <tr>
+                  <th>Code ID</th>
+                  <th>Category</th>
+                  <th>RSS Details</th>
+                  <th>Cost</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+
+              <tbody id="admin-rss-table">
+                <tr>
+                  <td colspan="6">No RSS inventory loaded.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- SUBSCRIPTIONS PAGE -->
+
+      <section class="admin-page" id="page-subscriptions">
+
+        <div class="page-heading">
+          <div>
+            <h2>Bot Subscriptions</h2>
+            <p>Manage customer bot plans and expiration dates.</p>
+          </div>
+        </div>
+
+        <div class="admin-card">
+
+          <div class="table-toolbar">
+            <input type="search" id="subscription-search" placeholder="Search customer or account...">
+
+            <select id="subscription-status-filter">
+              <option value="All">All Subscriptions</option>
+              <option value="Active">Active</option>
+              <option value="Expired">Expired</option>
+              <option value="Cancelled">Cancelled</option>
+            </select>
+          </div>
+
+          <div class="table-responsive">
+            <table>
+              <thead>
+                <tr>
+                  <th>Customer</th>
+                  <th>Bot Plan</th>
+                  <th>Account</th>
+                  <th>Start Date</th>
+                  <th>Expiration</th>
+                  <th>Auto Renew</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+
+              <tbody id="admin-subscriptions-table">
+                <tr>
+                  <td colspan="8">No subscriptions loaded.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- SUPPLIERS AND API PAGE -->
+
+      <section class="admin-page" id="page-suppliers">
+
+        <div class="page-heading">
+          <div>
+            <h2>Suppliers & API</h2>
+            <p>Manage supplier connections and purchase costs.</p>
+          </div>
+
+          <button class="primary-button" id="add-supplier-button">
+            + Add Supplier
+          </button>
+        </div>
+
+        <div class="stats-grid">
+
+          <div class="stat-card">
+            <div class="stat-icon blue">🌐</div>
+            <div>
+              <span>Connected Suppliers</span>
+              <h3 id="supplier-count">0</h3>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon green">💵</div>
+            <div>
+              <span>Supplier Balance</span>
+              <h3 id="supplier-balance">$0.00</h3>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon orange">💱</div>
+            <div>
+              <span>USD to PHP Rate</span>
+              <h3 id="exchange-rate">₱64.00</h3>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="admin-card">
+
+          <h3>Supplier Connections</h3>
+
+          <div class="table-responsive">
+            <table>
+              <thead>
+                <tr>
+                  <th>Supplier</th>
+                  <th>API Status</th>
+                  <th>Balance (USD)</th>
+                  <th>Last Sync</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+
+              <tbody id="admin-suppliers-table">
+                <tr>
+                  <td colspan="5">No suppliers configured.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+
+        <div class="admin-card">
+
+          <h3>Exchange Rate Settings</h3>
+
+          <form id="exchange-rate-form">
+
+            <label for="usd-rate">USD to PHP Exchange Rate</label>
+
+            <input
+              type="number"
+              id="usd-rate"
+              min="0.01"
+              step="0.01"
+              value="64"
+              required
+            >
+
+            <button type="submit" class="primary-button">
+              Save Exchange Rate
+            </button>
+
+          </form>
+
+          <p class="form-note">
+            pinoy LM Shop interface only. Supplier API credentials must be
+            stored securely on the server, never in browser JavaScript.
+          </p>
+
+        </div>
+
+      </section>
+
+      <!-- SETTINGS PAGE -->
+
+      <section class="admin-page" id="page-settings">
+
+        <div class="page-heading">
+          <div>
+            <h2>Shop Settings</h2>
+            <p>Manage shop information and customer announcements.</p>
+          </div>
+        </div>
+
+        <div class="admin-card">
+
+          <h3>Shop Information</h3>
+
+          <form id="shop-settings-form">
+
+            <label for="shop-name">Shop Name</label>
+
+            <input
+              type="text"
+              id="shop-name"
+              value="PINoy LM SHOP"
+              required
+            >
+
+            <label for="shop-description">Shop Description</label>
+
+            <textarea
+              id="shop-description"
+              rows="3"
+            >Your trusted online gaming shop.</textarea>
+
+            <label for="shop-whatsapp">WhatsApp Support Link</label>
+
+            <input
+              type="url"
+              id="shop-whatsapp"
+              placeholder="https://wa.me/..."
+            >
+
+            <label for="shop-telegram">Telegram Support Link</label>
+
+            <input
+              type="url"
+              id="shop-telegram"
+              placeholder="https://t.me/..."
+            >
+
+            <button type="submit" class="primary-button">
+              Save Shop Settings
+            </button>
+
+          </form>
+
+        </div>
+
+        <div class="admin-card">
+
+          <h3>Customer Announcement</h3>
+
+          <form id="announcement-form">
+
+            <label for="announcement-title">Announcement Title</label>
+
+            <input
+              type="text"
+              id="announcement-title"
+              placeholder="Enter announcement title"
+            >
+
+            <label for="announcement-message">Message</label>
+
+            <textarea
+              id="announcement-message"
+              rows="4"
+              placeholder="Write your announcement..."
+            ></textarea>
+
+            <label class="checkbox-label">
+              <input type="checkbox" id="announcement-active">
+              Publish announcement
+            </label>
+
+            <button type="submit" class="primary-button">
+              Save Announcement
+            </button>
+
+          </form>
+
+        </div>
+
+      </section>
+
+    </main>
+
+  </div>
+
+  <!-- PRODUCT MODAL -->
+
+  <div class="admin-modal" id="product-modal">
+
+    <div class="admin-modal-box">
+
+      <div class="modal-heading">
+        <h2 id="product-modal-title">Add Product</h2>
+
+        <button type="button" data-close-admin="product-modal">
+          ✕
+        </button>
+      </div>
+
+      <form id="admin-product-form">
+
+        <input type="hidden" id="edit-product-id">
+
+        <label for="admin-product-name">Product Name</label>
+        <input type="text" id="admin-product-name" required>
+
+        <label for="admin-product-category">Category</label>
+        <select id="admin-product-category" required>
+          <option value="RSS">RSS</option>
+          <option value="Bot">Bot</option>
+          <option value="Tracker">Tracker</option>
+          <option value="Gems">Gems</option>
+          <option value="Other">Other Products</option>
+        </select>
+
+        <label for="admin-product-description">Description</label>
+        <textarea id="admin-product-description" rows="3"></textarea>
+
+        <label for="admin-product-cost">Supplier Cost (USD)</label>
+        <input type="number" id="admin-product-cost" min="0" step="0.01">
+
+        <label for="admin-product-price">Selling Price (PHP)</label>
+        <input type="number" id="admin-product-price" min="0" step="0.01" required>
+
+        <label for="admin-product-stock">Stock Quantity</label>
+        <input type="number" id="admin-product-stock" min="0" value="0" required>
+
+        <label for="admin-product-emoji">Product Icon</label>
+        <input type="text" id="admin-product-emoji" value="📦">
+
+        <label class="checkbox-label">
+          <input type="checkbox" id="admin-product-active" checked>
+          Product is active
+        </label>
+
+        <button type="submit" class="primary-button">
+          Save Product
+        </button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+  <!-- RSS IMPORT MODAL -->
+
+  <div class="admin-modal" id="rss-modal">
+
+    <div class="admin-modal-box">
+
+      <div class="modal-heading">
+        <h2>Import RSS Inventory</h2>
+
+        <button type="button" data-close-admin="rss-modal">
+          ✕
+        </button>
+      </div>
+
+      <form id="rss-import-form">
+
+        <label for="rss-import-category">RSS Category</label>
+
+        <select id="rss-import-category" required>
+          <option value="Old KD RSS">Old KD RSS</option>
+          <option value="Rarely KD RSS">Rarely KD RSS</option>
+          <option value="Fresh KD RSS">Fresh KD RSS</option>
+        </select>
+
+        <label for="rss-import-file">TXT or CSV File</label>
+
+        <input
+          type="file"
+          id="rss-import-file"
+          accept=".txt,.csv"
+          required
+        >
+
+        <p class="form-note">
+          Duplicate detection and secure inventory saving will be
+          implemented during Supabase integration.
+        </p>
+
+        <button type="submit" class="primary-button">
+          Import File
+        </button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+  <!-- ADMIN TOAST -->
+
+  <div id="admin-toast-container"></div>
+
+  <script src="admin.js"></script>
+
+</body>
+</html>
